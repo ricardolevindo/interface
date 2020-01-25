@@ -1,0 +1,133 @@
+header{
+    background-color:rgba(0,0,0,0.5);
+    padding: 15px 0;
+    float: left;
+    width: 100%;
+}
+
+header .menu{
+    float: left;
+    line-height: 50px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+header .logo{
+    width: 200px;
+    height: 50px;
+    float: left;
+    background-image: url('https://cdn3.f-cdn.com//files/download/78757157/Vanamo_Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+header .menu a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    padding:0 15px;
+}
+
+body{
+    margin:0;
+}
+
+@media screen and (min-width: 1024px){
+    header{
+        padding: 15px calc((100% - 1024px)/2);
+    }
+    header .menu{
+        padding: 0 15px;
+        width: calc(100% - 240px);
+        margin-left: 40px;
+    }
+
+    header button{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 1023px){
+    header button,
+    header button span {
+        display: inline-block;
+        transition: all .4s;
+        box-sizing: border-box;
+    }
+    header button {
+        position: relative;
+        width: 40px;
+        height: 35px;
+        -webkit-appearance: none;
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        float: right;
+        margin-right: 20px;
+        margin-top: 15px;
+    }
+    header button span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 4px;
+    }
+    header button span:nth-of-type(1) {
+        top: 0;
+    }
+    header button span:nth-of-type(2) {
+        top: 15px;
+    }
+    header button span:nth-of-type(3) {
+        bottom: 0;
+    }
+    header button.active span:nth-of-type(1) {
+        -webkit-transform: translateY(20px) rotate(-45deg);
+        transform: translateY(20px) rotate(-45deg);
+    }
+    header button.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    header button.active span:nth-of-type(3) {
+        -webkit-transform: translateY(-20px) rotate(45deg);
+        transform: translateY(-20px) rotate(45deg);
+    }
+
+    header{
+        width: 100%;
+        height: 70px;
+        padding:0;
+    }
+
+    header .menu{
+        line-height: 20px;
+        width: 100%;
+        position: absolute;
+        margin-top: 70px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    header .menu.active{
+        max-height: 2000px;
+        transition: 0.3s;
+    }
+
+    header .menu a{
+        width: 100%;
+        float: left;
+    }
+
+    header .logo{
+        width: 50px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+}
